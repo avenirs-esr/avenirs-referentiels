@@ -1,10 +1,10 @@
-package fr.avenirsesr;
+package fr.avenirsesr.referentiels;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class AvenirsSpringBootTemplateApplicationTests {
+class AvenirsReferentielsApplicationTests {
 
 	@Test
 	void contextLoads() {
