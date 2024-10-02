@@ -62,3 +62,6 @@ replay_pid*
 
 # Node & npm
 node_modules
+
+# Local Spring boot settings
+/src/main/resources/env.properties
