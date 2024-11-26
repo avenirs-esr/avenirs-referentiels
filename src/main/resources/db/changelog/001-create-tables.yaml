@@ -1,0 +1,1313 @@
+databaseChangeLog:
+- changeSet:
+    id: 1732615022642-1
+    author: Dugat
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: ApprentissageCritique_pkey
+            name: id
+            type: INTEGER
+        - column:
+            constraints:
+              nullable: false
+            name: libelle
+            type: TEXT
+        - column:
+            constraints:
+              nullable: false
+            name: ensembleApprentissageCritiqueId
+            type: INTEGER
+        tableName: ApprentissageCritique
+- changeSet:
+    id: 1732615022642-2
+    author: Dugat
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: BlocDeCompetence_pkey
+            name: id
+            type: INTEGER
+        - column:
+            constraints:
+              nullable: false
+            name: libelle
+            type: TEXT
+        - column:
+            constraints:
+              nullable: false
+            name: saeId
+            type: INTEGER
+        - column:
+            constraints:
+              nullable: false
+            name: evaluationId
+            type: INTEGER
+        - column:
+            constraints:
+              nullable: false
+            name: portfolioId
+            type: INTEGER
+        - column:
+            constraints:
+              nullable: false
+            name: enseignementId
+            type: INTEGER
+        tableName: BlocDeCompetence
+- changeSet:
+    id: 1732615022642-3
+    author: Dugat
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: Competence_pkey
+            name: id
+            type: INTEGER
+        - column:
+            constraints:
+              nullable: false
+            name: libelle
+            type: TEXT
+        - column:
+            name: rncpId
+            type: INTEGER
+        - column:
+            name: rome4Id
+            type: INTEGER
+        - column:
+            constraints:
+              nullable: false
+            name: createdAt
+            type: date
+        - column:
+            constraints:
+              nullable: false
+            name: updatedAt
+            type: date
+        - column:
+            name: deletedAt
+            type: date
+        tableName: Competence
+- changeSet:
+    id: 1732615022642-4
+    author: Dugat
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: Composante_pkey
+            name: id
+            type: INTEGER
+        - column:
+            constraints:
+              nullable: false
+            name: libelle
+            type: TEXT
+        - column:
+            name: etablissementId
+            type: INTEGER
+        tableName: Composante
+- changeSet:
+    id: 1732615022642-5
+    author: Dugat
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: CritereExigence_pkey
+            name: id
+            type: INTEGER
+        - column:
+            constraints:
+              nullable: false
+            name: libelle
+            type: TEXT
+        - column:
+            constraints:
+              nullable: false
+            name: competenceId
+            type: INTEGER
+        tableName: CritereExigence
+- changeSet:
+    id: 1732615022642-6
+    author: Dugat
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: CritereExigenceTypeCritereExigence_pkey
+            name: critereExigenceId
+            type: INTEGER
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: CritereExigenceTypeCritereExigence_pkey
+            name: typeCritereExigenceId
+            type: INTEGER
+        tableName: CritereExigenceTypeCritereExigence
+- changeSet:
+    id: 1732615022642-7
+    author: Dugat
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: Diplome_pkey
+            name: id
+            type: INTEGER
+        - column:
+            constraints:
+              nullable: false
+            name: libelle
+            type: TEXT
+        - column:
+            name: description
+            type: TEXT
+        - column:
+            constraints:
+              nullable: false
+            name: heures
+            type: INTEGER
+        - column:
+            constraints:
+              nullable: false
+            name: credits
+            type: INTEGER
+        tableName: Diplome
+- changeSet:
+    id: 1732615022642-8
+    author: Dugat
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: ElementConstitutif_pkey
+            name: id
+            type: INTEGER
+        - column:
+            constraints:
+              nullable: false
+            name: libelle
+            type: TEXT
+        - column:
+            constraints:
+              nullable: false
+            name: blocDeCompetenceId
+            type: INTEGER
+        tableName: ElementConstitutif
+- changeSet:
+    id: 1732615022642-9
+    author: Dugat
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: ElementConstitutifApprentissageCritique_pkey
+            name: elementConstitutifId
+            type: INTEGER
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: ElementConstitutifApprentissageCritique_pkey
+            name: apprentissageCritiqueId
+            type: INTEGER
+        tableName: ElementConstitutifApprentissageCritique
+- changeSet:
+    id: 1732615022642-10
+    author: Dugat
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: Enseignement_pkey
+            name: id
+            type: INTEGER
+        - column:
+            constraints:
+              nullable: false
+            name: libelle
+            type: TEXT
+        - column:
+            constraints:
+              nullable: false
+            name: typeEnseignementId
+            type: INTEGER
+        tableName: Enseignement
+- changeSet:
+    id: 1732615022642-11
+    author: Dugat
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: EnsembleApprentissageCritique_pkey
+            name: id
+            type: INTEGER
+        - column:
+            constraints:
+              nullable: false
+            name: libelle
+            type: TEXT
+        tableName: EnsembleApprentissageCritique
+- changeSet:
+    id: 1732615022642-12
+    author: Dugat
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: Etablissement_pkey
+            name: id
+            type: INTEGER
+        - column:
+            constraints:
+              nullable: false
+            name: libelle
+            type: TEXT
+        tableName: Etablissement
+- changeSet:
+    id: 1732615022642-13
+    author: Dugat
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: Etiquette_pkey
+            name: id
+            type: INTEGER
+        - column:
+            constraints:
+              nullable: false
+            name: libelle
+            type: TEXT
+        - column:
+            constraints:
+              nullable: false
+            name: critereExigenceId
+            type: INTEGER
+        tableName: Etiquette
+- changeSet:
+    id: 1732615022642-14
+    author: Dugat
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: Evaluation_pkey
+            name: id
+            type: INTEGER
+        - column:
+            constraints:
+              nullable: false
+            name: libelle
+            type: TEXT
+        - column:
+            constraints:
+              nullable: false
+            name: typeEvaluationId
+            type: INTEGER
+        tableName: Evaluation
+- changeSet:
+    id: 1732615022642-15
+    author: Dugat
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: FamilleDeSituation_pkey
+            name: id
+            type: INTEGER
+        - column:
+            constraints:
+              nullable: false
+            name: libelle
+            type: TEXT
+        tableName: FamilleDeSituation
+- changeSet:
+    id: 1732615022642-16
+    author: Dugat
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: Formation_pkey
+            name: id
+            type: INTEGER
+        - column:
+            constraints:
+              nullable: false
+            name: libelle
+            type: TEXT
+        - column:
+            name: description
+            type: TEXT
+        - column:
+            constraints:
+              nullable: false
+            name: composanteId
+            type: INTEGER
+        - column:
+            constraints:
+              nullable: false
+            name: diplomeId
+            type: INTEGER
+        - column:
+            constraints:
+              nullable: false
+            name: parametreId
+            type: INTEGER
+        tableName: Formation
+- changeSet:
+    id: 1732615022642-17
+    author: Dugat
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: Niveau_pkey
+            name: id
+            type: INTEGER
+        - column:
+            constraints:
+              nullable: false
+            name: libelle
+            type: TEXT
+        tableName: Niveau
+- changeSet:
+    id: 1732615022642-18
+    author: Dugat
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: Parametre_pkey
+            name: id
+            type: INTEGER
+        - column:
+            constraints:
+              nullable: false
+            name: libelle
+            type: TEXT
+        - column:
+            name: description
+            type: TEXT
+        - column:
+            constraints:
+              nullable: false
+            name: etablissementId
+            type: INTEGER
+        tableName: Parametre
+- changeSet:
+    id: 1732615022642-19
+    author: Dugat
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: ParametreElement_pkey
+            name: id
+            type: INTEGER
+        - column:
+            constraints:
+              nullable: false
+            name: libelle
+            type: TEXT
+        - column:
+            constraints:
+              nullable: false
+            name: value
+            type: TEXT
+        - column:
+            name: description
+            type: TEXT
+        tableName: ParametreElement
+- changeSet:
+    id: 1732615022642-20
+    author: Dugat
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: ParametreElementParametre_pkey
+            name: parametreId
+            type: INTEGER
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: ParametreElementParametre_pkey
+            name: parametreElementId
+            type: INTEGER
+        tableName: ParametreElementParametre
+- changeSet:
+    id: 1732615022642-21
+    author: Dugat
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: Parcours_pkey
+            name: id
+            type: INTEGER
+        - column:
+            constraints:
+              nullable: false
+            name: libelle
+            type: TEXT
+        tableName: Parcours
+- changeSet:
+    id: 1732615022642-22
+    author: Dugat
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: Periode_pkey
+            name: id
+            type: INTEGER
+        - column:
+            constraints:
+              nullable: false
+            name: libelle
+            type: TEXT
+        - column:
+            constraints:
+              nullable: false
+            name: competenceId
+            type: INTEGER
+        - column:
+            constraints:
+              nullable: false
+            name: niveauId
+            type: INTEGER
+        tableName: Periode
+- changeSet:
+    id: 1732615022642-23
+    author: Dugat
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: portfolio_pkey
+            name: id
+            type: INTEGER
+        - column:
+            constraints:
+              nullable: false
+            name: libelle
+            type: TEXT
+        tableName: Portfolio
+- changeSet:
+    id: 1732615022642-24
+    author: Dugat
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: Rncp_pkey
+            name: id
+            type: INTEGER
+        - column:
+            constraints:
+              nullable: false
+            name: code
+            type: TEXT
+        - column:
+            constraints:
+              nullable: false
+            name: libelle
+            type: TEXT
+        - column:
+            constraints:
+              nullable: false
+            name: url
+            type: TEXT
+        tableName: Rncp
+- changeSet:
+    id: 1732615022642-25
+    author: Dugat
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: Role_pkey
+            name: id
+            type: INTEGER
+        - column:
+            constraints:
+              nullable: false
+            name: name
+            type: TEXT
+        tableName: Role
+- changeSet:
+    id: 1732615022642-26
+    author: Dugat
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: Rome4_pkey
+            name: id
+            type: INTEGER
+        - column:
+            constraints:
+              nullable: false
+            name: code
+            type: TEXT
+        - column:
+            constraints:
+              nullable: false
+            name: libelle
+            type: TEXT
+        - column:
+            constraints:
+              nullable: false
+            name: url
+            type: TEXT
+        tableName: Rome4
+- changeSet:
+    id: 1732615022642-27
+    author: Dugat
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: Sae_pkey
+            name: id
+            type: INTEGER
+        - column:
+            constraints:
+              nullable: false
+            name: libelle
+            type: TEXT
+        - column:
+            constraints:
+              nullable: false
+            name: familleDeSituationId
+            type: INTEGER
+        tableName: Sae
+- changeSet:
+    id: 1732615022642-28
+    author: Dugat
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: Semestre_pkey
+            name: id
+            type: INTEGER
+        - column:
+            constraints:
+              nullable: false
+            name: libelle
+            type: TEXT
+        - column:
+            constraints:
+              nullable: false
+            name: enseignementId
+            type: INTEGER
+        tableName: Semestre
+- changeSet:
+    id: 1732615022642-29
+    author: Dugat
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: TypeCritereExigence_pkey
+            name: id
+            type: INTEGER
+        - column:
+            constraints:
+              nullable: false
+            name: libelle
+            type: TEXT
+        tableName: TypeCritereExigence
+- changeSet:
+    id: 1732615022642-30
+    author: Dugat
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: TypeEnseignement_pkey
+            name: id
+            type: INTEGER
+        - column:
+            constraints:
+              nullable: false
+            name: libelle
+            type: TEXT
+        tableName: TypeEnseignement
+- changeSet:
+    id: 1732615022642-31
+    author: Dugat
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: TypeEvaluation_pkey
+            name: id
+            type: INTEGER
+        - column:
+            constraints:
+              nullable: false
+            name: libelle
+            type: TEXT
+        tableName: TypeEvaluation
+- changeSet:
+    id: 1732615022642-32
+    author: Dugat
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: User_pkey
+            name: id
+            type: INTEGER
+        - column:
+            constraints:
+              nullable: false
+            name: email
+            type: TEXT
+        - column:
+            name: name
+            type: TEXT
+        - column:
+            constraints:
+              nullable: false
+            name: roleId
+            type: INTEGER
+        tableName: User
+- changeSet:
+    id: 1732615022642-33
+    author: Dugat
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: UserEtablissement_pkey
+            name: userId
+            type: INTEGER
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: UserEtablissement_pkey
+            name: etablissementId
+            type: INTEGER
+        tableName: UserEtablissement
+- changeSet:
+    id: 1732615022642-34
+    author: Dugat
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: Version_pkey
+            name: id
+            type: INTEGER
+        - column:
+            constraints:
+              nullable: false
+            name: libelle
+            type: INTEGER
+        - column:
+            constraints:
+              nullable: false
+            name: competenceId
+            type: INTEGER
+        - column:
+            constraints:
+              nullable: false
+            name: parcoursId
+            type: INTEGER
+        tableName: Version
+- changeSet:
+    id: 1732615022642-35
+    author: Dugat
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: apprentissageCritiqueId
+        baseTableName: ElementConstitutifApprentissageCritique
+        constraintName: apprentissageCritiqueId
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: ApprentissageCritique
+        validate: true
+- changeSet:
+    id: 1732615022642-36
+    author: Dugat
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: blocDeCompetenceId
+        baseTableName: ElementConstitutif
+        constraintName: blocDeCompetenceId
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: BlocDeCompetence
+        validate: true
+- changeSet:
+    id: 1732615022642-37
+    author: Dugat
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: competenceId
+        baseTableName: CritereExigence
+        constraintName: competenceId
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: Competence
+        validate: true
+- changeSet:
+    id: 1732615022642-38
+    author: Dugat
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: competenceId
+        baseTableName: Periode
+        constraintName: competenceId
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: Competence
+        validate: true
+- changeSet:
+    id: 1732615022642-39
+    author: Dugat
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: competenceId
+        baseTableName: Version
+        constraintName: competenceId
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: Competence
+        validate: true
+- changeSet:
+    id: 1732615022642-40
+    author: Dugat
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: composanteId
+        baseTableName: Formation
+        constraintName: composanteId
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: Composante
+        validate: true
+- changeSet:
+    id: 1732615022642-41
+    author: Dugat
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: critereExigenceId
+        baseTableName: CritereExigenceTypeCritereExigence
+        constraintName: critereExigenceId
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: CritereExigence
+        validate: true
+- changeSet:
+    id: 1732615022642-42
+    author: Dugat
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: critereExigenceId
+        baseTableName: Etiquette
+        constraintName: critereExigenceId
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: CritereExigence
+        validate: true
+- changeSet:
+    id: 1732615022642-43
+    author: Dugat
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: diplomeId
+        baseTableName: Formation
+        constraintName: diplomeId
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: Diplome
+        validate: true
+- changeSet:
+    id: 1732615022642-44
+    author: Dugat
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: elementConstitutifId
+        baseTableName: ElementConstitutifApprentissageCritique
+        constraintName: elementConstitutifId
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: ElementConstitutif
+        validate: true
+- changeSet:
+    id: 1732615022642-45
+    author: Dugat
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: enseignementId
+        baseTableName: BlocDeCompetence
+        constraintName: enseignementId
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: Enseignement
+        validate: true
+- changeSet:
+    id: 1732615022642-46
+    author: Dugat
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: enseignementId
+        baseTableName: Semestre
+        constraintName: enseignementId
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: Enseignement
+        validate: true
+- changeSet:
+    id: 1732615022642-47
+    author: Dugat
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: ensembleApprentissageCritiqueId
+        baseTableName: ApprentissageCritique
+        constraintName: ensembleApprentissageCritiqueId
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: EnsembleApprentissageCritique
+        validate: true
+- changeSet:
+    id: 1732615022642-48
+    author: Dugat
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: etablissementId
+        baseTableName: Composante
+        constraintName: etablissementId
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: Etablissement
+        validate: true
+- changeSet:
+    id: 1732615022642-49
+    author: Dugat
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: etablissementId
+        baseTableName: Parametre
+        constraintName: etablissementId
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: Etablissement
+        validate: true
+- changeSet:
+    id: 1732615022642-50
+    author: Dugat
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: etablissementId
+        baseTableName: UserEtablissement
+        constraintName: etablissementId
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: Etablissement
+        validate: true
+- changeSet:
+    id: 1732615022642-51
+    author: Dugat
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: evaluationId
+        baseTableName: BlocDeCompetence
+        constraintName: evaluationId
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: Evaluation
+        validate: true
+- changeSet:
+    id: 1732615022642-52
+    author: Dugat
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: familleDeSituationId
+        baseTableName: Sae
+        constraintName: familleDeSituationId
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: FamilleDeSituation
+        validate: true
+- changeSet:
+    id: 1732615022642-53
+    author: Dugat
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: niveauId
+        baseTableName: Periode
+        constraintName: niveauId
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: Niveau
+        validate: true
+- changeSet:
+    id: 1732615022642-54
+    author: Dugat
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: parametreElementId
+        baseTableName: ParametreElementParametre
+        constraintName: parametreElementId
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: ParametreElement
+        validate: true
+- changeSet:
+    id: 1732615022642-55
+    author: Dugat
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: parametreId
+        baseTableName: Formation
+        constraintName: parametreId
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: Parametre
+        validate: true
+- changeSet:
+    id: 1732615022642-56
+    author: Dugat
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: parametreId
+        baseTableName: ParametreElementParametre
+        constraintName: parametreId
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: Parametre
+        validate: true
+- changeSet:
+    id: 1732615022642-57
+    author: Dugat
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: parcoursId
+        baseTableName: Version
+        constraintName: parcoursId
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: Parcours
+        validate: true
+- changeSet:
+    id: 1732615022642-58
+    author: Dugat
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: portfolioId
+        baseTableName: BlocDeCompetence
+        constraintName: portfolioId
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: Portfolio
+        validate: true
+- changeSet:
+    id: 1732615022642-59
+    author: Dugat
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: rncpId
+        baseTableName: Competence
+        constraintName: rncpId
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: Rncp
+        validate: true
+- changeSet:
+    id: 1732615022642-60
+    author: Dugat
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: roleId
+        baseTableName: User
+        constraintName: roleId
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: Role
+        validate: true
+- changeSet:
+    id: 1732615022642-61
+    author: Dugat
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: rome4Id
+        baseTableName: Competence
+        constraintName: rome4Id
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: Rome4
+        validate: true
+- changeSet:
+    id: 1732615022642-62
+    author: Dugat
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: saeId
+        baseTableName: BlocDeCompetence
+        constraintName: saeId
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: Sae
+        validate: true
+- changeSet:
+    id: 1732615022642-63
+    author: Dugat
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: typeCritereExigenceId
+        baseTableName: CritereExigenceTypeCritereExigence
+        constraintName: typeCritereExigenceId
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: TypeCritereExigence
+        validate: true
+- changeSet:
+    id: 1732615022642-64
+    author: Dugat
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: typeEnseignementId
+        baseTableName: Enseignement
+        constraintName: typeEnseignementId
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: TypeEnseignement
+        validate: true
+- changeSet:
+    id: 1732615022642-65
+    author: Dugat
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: typeEvaluationId
+        baseTableName: Evaluation
+        constraintName: typeEvaluationId
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: TypeEvaluation
+        validate: true
+- changeSet:
+    id: 1732615022642-66
+    author: Dugat
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: userId
+        baseTableName: UserEtablissement
+        constraintName: userId
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: User
+        validate: true
+
